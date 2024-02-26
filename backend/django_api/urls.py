@@ -9,4 +9,5 @@ urlpatterns = router.urls
 urlpatterns += [
     path('admin/', admin.site.urls),
     path('core/', include('core.urls', namespace='core')),
+    path('character/', include('character.urls', namespace='character')),
 ]
