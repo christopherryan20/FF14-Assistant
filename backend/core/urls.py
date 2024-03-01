@@ -8,5 +8,5 @@ app_name = 'core'
 urlpatterns = [
     path('worlds/', WorldAPIView.as_view(), name='worlds'),
     path('battle-jobs/', BattleJobApiView.as_view(), name='battle-jobs'),
-    path('api-token-auth/', obtain_auth_token), #gives us access to token auth
+    path('api-token-auth/', obtain_auth_token, name='get-token'), #gives us access to token auth
 ]
