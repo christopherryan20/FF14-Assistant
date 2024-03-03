@@ -22,6 +22,13 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    
+    - name: Create .env file
+      uses: SpicyPizza/create-envfile@v2.0.3
+      with:
+        envkey_DEBUG: 1
+        envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        envkey_DJANGO_ALLOWED_HOSTS: "* localhost 127.0.0.1 [::1]"
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
